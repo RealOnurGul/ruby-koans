@@ -116,8 +116,8 @@ EOS
 
   def test_single_quotes_sometimes_interpret_escape_characters
     string = '\\\''
-    assert_equal __, string.size
-    assert_equal __, string
+    assert_equal 2, string.size
+    assert_equal "\\\'", string
   end
 
   def test_double_quoted_strings_interpolate_variables
@@ -154,7 +154,6 @@ EOS
     def test_in_older_ruby_single_characters_are_represented_by_integers
       assert_equal __, ?a
       assert_equal __, ?a == 97
-
       assert_equal __, ?b == (?a + 1)
     end
   end
